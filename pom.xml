@@ -6,14 +6,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- 此部分不能使用 <properties/...> 中的元素来取代，必须直接给出具体的内容  -->
-    <groupId>org.wangpai.calculator</groupId>
-    <artifactId>calculator-mathlab-fx</artifactId>
-    <version>0.0</version>
+    <groupId>org.wangpai.mathlab</groupId>
+    <artifactId>mathlab-fx</artifactId>
+    <version>1.0</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>calculator-mathlab</module>
-        <module>calculator-exception</module>
+        <module>mathlib</module>
+        <module>exception</module>
+        <module>mathexp</module>
     </modules>
 
     <properties>
@@ -23,26 +24,31 @@
         <maven.compiler.target>17</maven.compiler.target>
 
         <!-- 凡是自定义的属性，都要加 .custom 后缀，以防与已有的预置属性相冲突 -->
-        <project.version.custom>0.0</project.version.custom>
+        <project.version.custom>1.0</project.version.custom>
 
         <junit.version.custom>5.8.2</junit.version.custom>
         <lombok.version.custom>1.18.20</lombok.version.custom>
         <log4j2.version.custom>2.15.0</log4j2.version.custom>
         <slf4j.version.custom>2.15.0</slf4j.version.custom>
 
-        <mainclass.custom>org.wangpai.calculator.CalculatorApplication</mainclass.custom>
+        <mainclass.custom>无</mainclass.custom>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.wangpai.calculator</groupId>
-                <artifactId>calculator-mathlab</artifactId>
+                <groupId>org.wangpai.mathlab</groupId>
+                <artifactId>mathlib</artifactId>
                 <version>${project.version.custom}</version>
             </dependency>
             <dependency>
-                <groupId>org.wangpai.calculator</groupId>
-                <artifactId>calculator-exception</artifactId>
+                <groupId>org.wangpai.mathlab</groupId>
+                <artifactId>exception</artifactId>
+                <version>${project.version.custom}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wangpai.mathlab</groupId>
+                <artifactId>mathexp</artifactId>
                 <version>${project.version.custom}</version>
             </dependency>
 
