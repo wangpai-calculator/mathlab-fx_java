@@ -8,13 +8,14 @@
     <!-- 此部分不能使用 <properties/...> 中的元素来取代，必须直接给出具体的内容  -->
     <groupId>org.wangpai.mathlab</groupId>
     <artifactId>mathlab-fx</artifactId>
-    <version>1.0</version>
+    <version>2.0</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>mathlib</module>
-        <module>exception</module>
-        <module>mathexp</module>
+        <module>math-library</module>
+        <module>math-exception</module>
+        <module>math-expression</module>
+        <module>externally-exposed</module>
     </modules>
 
     <properties>
@@ -24,12 +25,11 @@
         <maven.compiler.target>17</maven.compiler.target>
 
         <!-- 凡是自定义的属性，都要加 .custom 后缀，以防与已有的预置属性相冲突 -->
-        <project.version.custom>1.0</project.version.custom>
+        <project.version.custom>2.0</project.version.custom>
 
-        <junit.version.custom>5.8.2</junit.version.custom>
-        <lombok.version.custom>1.18.20</lombok.version.custom>
-        <log4j2.version.custom>2.15.0</log4j2.version.custom>
-        <slf4j.version.custom>2.15.0</slf4j.version.custom>
+        <junit.version.custom>5.9.0</junit.version.custom>
+        <lombok.version.custom>1.18.24</lombok.version.custom>
+        <log4j2.version.custom>2.18.0</log4j2.version.custom>
 
         <mainclass.custom>无</mainclass.custom>
     </properties>
@@ -38,17 +38,17 @@
         <dependencies>
             <dependency>
                 <groupId>org.wangpai.mathlab</groupId>
-                <artifactId>mathlib</artifactId>
+                <artifactId>math-library</artifactId>
                 <version>${project.version.custom}</version>
             </dependency>
             <dependency>
                 <groupId>org.wangpai.mathlab</groupId>
-                <artifactId>exception</artifactId>
+                <artifactId>math-exception</artifactId>
                 <version>${project.version.custom}</version>
             </dependency>
             <dependency>
                 <groupId>org.wangpai.mathlab</groupId>
-                <artifactId>mathexp</artifactId>
+                <artifactId>math-expression</artifactId>
                 <version>${project.version.custom}</version>
             </dependency>
 
@@ -72,7 +72,7 @@
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-slf4j-impl</artifactId>
-                <version>${slf4j.version.custom}</version>
+                <version>${log4j2.version.custom}</version>
             </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>

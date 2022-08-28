@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 此部分不能使用 <properties/...> 中的元素来取代，必须直接给出具体的内容  -->
+    <parent>
+        <groupId>org.wangpai.mathlab</groupId>
+        <artifactId>mathlab-fx</artifactId>
+        <version>2.0</version>
+    </parent>
+
+    <!--
+    本模块不包含任何对本项目自身有实际有用的代码。
+    本模块是一种对外暴露、含本项目全部必要 Maven 依赖的一个模块。
+    如果希望只通过一个依赖项就可以包含本项目的所有依赖，可以选择本模块依赖。
+    另外，本模块还包含一些示例文件
+    -->
+    <artifactId>externally-exposed</artifactId>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.wangpai.mathlab</groupId>
+            <artifactId>math-library</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.wangpai.mathlab</groupId>
+            <artifactId>math-exception</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.wangpai.mathlab</groupId>
+            <artifactId>math-expression</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>
